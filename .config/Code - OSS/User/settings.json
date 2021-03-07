@@ -2,7 +2,8 @@
     "editor.fontLigatures": true,
     "workbench.colorTheme": "generated-dark",
     "files.associations": {
-        "*.toml": "rust"
+        "*.toml": "rust",
+        "*.h": "c"
     },
     "workbench.colorCustomizations": {
         "[generated-dark]": {

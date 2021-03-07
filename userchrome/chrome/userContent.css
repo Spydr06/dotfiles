@@ -10,11 +10,11 @@
 */
 
 :root{
-	scrollbar-width: none !important;
+	scrollbar-width: 8px !important;
 }
 
 @-moz-document url(about:privatebrowsing) {
 	:root{
-		scrollbar-width: none !important;
+		scrollbar-width: 8px !important;
 	}
 }
