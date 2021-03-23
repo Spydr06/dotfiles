@@ -1,55 +1,45 @@
 ! Base colors
 
-*foreground:        #d8d7d5
-*background:        #1c161c
-*.foreground:       #d8d7d5
-*.background:       #1c161c
-emacs*foreground:   #d8d7d5
-emacs*background:   #1c161c
-URxvt*foreground:   #d8d7d5
-XTerm*foreground:   #d8d7d5
-UXTerm*foreground:  #d8d7d5
-URxvt*background:   [100]#1c161c
-XTerm*background:   #1c161c
-UXTerm*background:  #1c161c
-URxvt*cursorColor:  #d8d7d5
-XTerm*cursorColor:  #d8d7d5
-UXTerm*cursorColor: #d8d7d5
-URxvt*borderColor:  [100]#1c161c
+*foreground = #d8d7d5
+*background = #121215
+*.foreground = #d8d7d5
+*.background = #121215
+xterm*foreground = #d8d7d5
+xterm*background = #121215
 
 ! Colors 0-15.
+*color0: #1c161c
+*color1: #bf616a
+*color2: #a3be8c
+*color3: #8fbcbb
+*color4: #5e81ac
+*color5: #b48ead
+*color6 : #81a1c1
+*color7 : #d8dee9
+*color8 : #1c161c
+*color9 : #bf616a
+*color10: #a3be8c
+*color11: #8fbcbb
+*color12: #5e81ac
+*color13: #b48ead
+*color14: #81a1c1
+*color15: #eceff4
 *.color0: #1c161c
-*color0:  #1c161c
-*.color1: #495A64
-*color1:  #495A64
-*.color2: #57636B
-*color2:  #57636B
-*.color3: #6C6E72
-*color3:  #6C6E72
-*.color4: #7B7E83
-*color4:  #7B7E83
-*.color5: #939294
-*color5:  #939294
-*.color6: #B1B0AF
-*color6:  #B1B0AF
-*.color7: #d8d7d5
-*color7:  #d8d7d5
-*.color8: #979695
-*color8:  #979695
-*.color9: #495A64
-*color9:  #495A64
-*.color10: #57636B
-*color10:  #57636B
-*.color11: #6C6E72
-*color11:  #6C6E72
-*.color12: #7B7E83
-*color12:  #7B7E83
-*.color13: #939294
-*color13:  #939294
-*.color14: #B1B0AF
-*color14:  #B1B0AF
-*.color15: #d8d7d5
-*color15:  #d8d7d5
+*.color1: #bf616a
+*.color2: #a3be8c
+*.color3: #8fbcbb
+*.color4: #5e81ac
+*.color5: #b48ead
+*.color6 : #81a1c1
+*.color7 : #d8dee9
+*.color8 : #1c161c
+*.color9 : #bf616a
+*.color10: #a3be8c
+*.color11: #8fbcbb
+*.color12: #5e81ac
+*.color13: #b48ead
+*.color14: #81a1c1
+*.color15: #eceff4
 
 !*.foreground:  #E1E1E1
 !*.background:  #1c2023
@@ -92,8 +82,8 @@ rofi.kb-cancel: Escape,Alt+F1
 
 ! xterm
 xterm*termName: xterm-256color
-xterm*font: monospace
-xterm*faceName: monospace:size=11
+xterm*font: Fira Code Retina 11
+xterm*faceName: Fira Code:size=11
 xterm*loginShell: true
 xterm*vt100*geometry: 90x34
 xterm*saveLines: 2000

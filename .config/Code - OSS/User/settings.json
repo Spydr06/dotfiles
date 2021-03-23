@@ -567,5 +567,7 @@
     
     },
     "git.confirmSync": false,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "todo-tree.tree.showScanModeButton": false,
+    "kite.showWelcomeNotificationOnStartup": false
 }
