@@ -32,13 +32,16 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $terminal
+bindsym $mod+Return exec $terminal -e fish
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi
 bindsym $mod+d exec --no-startup-id rofi_run
+
+# power menu
+bindsym $mod++Shift+s exec --no-startup-id rofi_run -l
 
 # change focus
 bindsym $mod+j focus left
