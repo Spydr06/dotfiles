@@ -6,4 +6,4 @@
 	url = https://github.com/Spydr06/Wallpapers.git
 [submodule "dwm-spydr"]
 	path = dwm-spydr
-	url = ./dwm-spydr
+	url = https://github.com/Spydr06/dwm-spydr.git
