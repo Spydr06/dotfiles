@@ -33,14 +33,20 @@ In addition, I've included the following things:
 This repository is mostly set up like your $HOME folder.
 ### a) To install everything, enter the following shell commands (might be unsafe):
 ```bash
-cd ~
+cd Downloads
 ```
 ```bash
-git clone --recursive https://github.com/spydr06/dotfiles.git
+git clone --recursive https://github.com/spydr06/dotfiles.git spydr-dotfiles
+cd sypdr-dotfiles
 ```
 ```bash
 rm -rf .git/    # delete the .git directory, so you can still have your own repositories in subdirectories
 ```
+```bash
+cp -rv * ~/
+```
+Note: For some programs, like Tabliss, you need to first load the config or move it to the correct directory
+
 ### b) To install my themes partially, enter the following shell commands (safer):
 ```bash
 cd ~/Downloads    # cd into a non-critical directory (Downloads for example)
