@@ -1,5 +1,6 @@
 # dotfiles
-My dotfiles and configurations of my linux system
+My dotfiles and configurations of my linux system.
+*Disclaimer:* This repository is very messy and definately needs some cleaning, which I will do as soon as possible.
 
 ## Contents
 This repository contains configurations for the following programs:
@@ -21,7 +22,7 @@ This repository contains configurations for the following programs:
 * tabliss (New-tab-page for Firefox)
 * zsh (Shell)
 
-Following things you can find here additionally:
+In addition, I've included the following things:
 * GKT2/3 themes
 * Firefox Userchrome (not mine)
 * Openbox themes
@@ -40,7 +41,7 @@ git clone --recursive https://github.com/spydr06/dotfiles.git
 ```bash
 rm -rf .git/    # delete the .git directory, so you can still have your own repositories in subdirectories
 ```
-### b) Install my themes partially, enter the following shell commands (safer):
+### b) To install my themes partially, enter the following shell commands (safer):
 ```bash
 cd ~/Downloads    # cd into a non-critical directory (Downloads for example)
 ```
@@ -50,7 +51,7 @@ cd dotfiles-spydr
 ```
 Now you can copy all the configs you want to use.
 
-### c) Install my custom dwm-version:
+### c) To install my custom dwm-version:
 Although the installation does not differ from the default dwm installation process, you can follow the installation instructions on my [DWM repository](https://github.com/spydr06/dwm-spydr).
 
 ### Important:
