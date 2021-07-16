@@ -31,23 +31,8 @@ In addition, I've included the following things:
 
 ## Installation
 This repository is mostly set up like your $HOME folder.
-### a) To install everything, enter the following shell commands (might be unsafe):
-```bash
-cd Downloads
-```
-```bash
-git clone --recursive https://github.com/spydr06/dotfiles.git spydr-dotfiles
-cd sypdr-dotfiles
-```
-```bash
-rm -rf .git/    # delete the .git directory, so you can still have your own repositories in subdirectories
-```
-```bash
-cp -rv * ~/
-```
-Note: For some programs, like Tabliss, you need to first load the config or move it to the correct directory
 
-### b) To install my themes partially, enter the following shell commands (safer):
+### a) To install my themes, enter the following shell commands:
 ```bash
 cd ~/Downloads    # cd into a non-critical directory (Downloads for example)
 ```
@@ -55,9 +40,10 @@ cd ~/Downloads    # cd into a non-critical directory (Downloads for example)
 git clone --recursive https://github.com/spydr06/dotfiles.git dotfiles-spydr
 cd dotfiles-spydr
 ```
-Now you can copy all the configs you want to use.
+Now you can copy all the configs you want to use in their corresponding directories.
+###### Note, that I do not provide any kind of warranty or technical support. Do all of this at your own risk and make backups of your data before modifying your system.
 
-### c) To install my custom dwm-version:
+### b) To install my custom dwm-version:
 Although the installation does not differ from the default dwm installation process, you can follow the installation instructions on my [DWM repository](https://github.com/spydr06/dwm-spydr).
 
 ### Important:
