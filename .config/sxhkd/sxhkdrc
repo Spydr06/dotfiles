@@ -1,23 +1,36 @@
 #
-# wm independent hotkeys
+# Spydr06's sxhkd configuration
+# https://gihub.com/spydr06/dotfiles.git
 #
 
-# terminal emulator
+## applications ##
 super + Return
 	alacritty
+super + b
+	firefox
+super + c
+	codium
 
 # program launcher
-super + d
-	rofi -show run
+super + {d, w}
+	rofi -show {run, window}
 
+# eww
+super + y
+	sh /home/spydr/.config/eww/lock_screen.sh
+alt + y
+	eww close-all
+
+## sxhkd control ##
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
-# bspwm hotkeys
-#
+## media hotkeys ##
+XF86Audio{Play,Stop,Next,Prev}
+	playerctl {play-pause,stop,next,previous}
 
+## bspwm hotkeys ##
 # quit/restart bspwm
 super + shift + {e,r}
 	bspc {quit,wm -r}
@@ -50,10 +63,7 @@ super + {t,shift + t,x,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
 # focus/swap
-#
-
 # focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
@@ -84,10 +94,7 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
 # preselect
-#
-
 # preselect the direction
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
@@ -104,10 +111,7 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
 # move/resize
-#
-
 # expand a window by moving one of its side outward
 super + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}

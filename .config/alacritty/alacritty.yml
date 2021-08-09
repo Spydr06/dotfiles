@@ -1,4 +1,7 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
+#
+# Spydr06's configuration for Alacritty-ligatures, the GPU enhanced terminal emulator
+# https://gihub.com/spydr06/dotfiles.git
+#
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -11,6 +14,7 @@ env:
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
+  EDITOR: codium
 
 window:
   # Window dimensions (changes require restart)
@@ -76,7 +80,7 @@ window:
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
-  #gtk_theme_variant: None
+  gtk_theme_variant: None
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -97,90 +101,32 @@ scrolling:
 # Some applications, like Emacs, rely on knowing about the width of a tab.
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
-#tabspaces: 8
+# tabspaces: 4
 
 # Font configuration
 font:
   # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    # family: SauceCodePro Nerd Font
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofur Nerd Font
-    # family: TerminessTTF Nerd Font
-    family: "Fira Code"
-
-    # The `style` can be specified to pick a specific face.
+    family: "Fira Code Nerd Font"
     style: Retina
 
   # Bold font face
   bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    # family: SauceCodePro Nerd Font
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofur Nerd Font
-    # family: TerminessTTF Nerd Font
-    family: "Fira Code"
-
-    # The `style` can be specified to pick a specific face.
+    family: "Fira Code Nerd Font"
     style: Semibold
 
   # Italic font face
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    # family: SauceCodePro Nerd Font Mono
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofuritalic Nerd Font Mono
-    # family: TerminessTTF Nerd Font
-    family: "Fira Code Retina"
-
-    # The `style` can be specified to pick a specific face.
+    family: "Fira Code Nerd Font"
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    # family: SauceCodePro Nerd Font Mono
-    # family: CodeNewRoman Nerd Font
-    # family: RobotoMono Nerd Font
-    # family: Hack
-    # family: JetBrains Mono
-    # family: UbuntuMono Nerd Font
-    # family: Monofuritalic Nerd Font Mono
-    # family: TerminessTTF Nerd Font
-    family: "Fira Code"
-
-    # The `style` can be specified to pick a specific face.
+    family: "Fira Code Nerd Font"
     style: Bold Italic
 
   # Point size
-  size: 11.0
+  size: 9.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -218,8 +164,8 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x181c24'
-    foreground: '0xd4d7d8'
+    background: '0x11151a'
+    foreground: '0xd0dadf'
 
     # Bright and dim foreground colors
     #
@@ -250,7 +196,7 @@ colors:
     black:   '0x252527'
     red:     '0xbf616a'
     green:   '0xa3be8c'
-    yellow:  '0x8fbcbb'
+    yellow:  '0xebcb8b'
     blue:    '0x5e81ac'
     magenta: '0xb48ead'
     cyan:    '0x81a1c1'
@@ -261,7 +207,7 @@ colors:
     black:   '0x252527'
     red:     '0xbf616a'
     green:   '0xa3be8c'
-    yellow:  '0x8fbcbb'
+    yellow:  '0xebcb8b'
     blue:    '0x5e81ac'
     magenta: '0xb48ead'
     cyan:    '0x81a1c1'
@@ -344,15 +290,15 @@ cursor:
     shape: Underline
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-    unfocused_hollow: true
+    unfocused_hollow: false
     blinking: Always
 
-  vi_mode_style: Beam
+  vi_mode_style: Underline
 
   blink_interval: 500
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #

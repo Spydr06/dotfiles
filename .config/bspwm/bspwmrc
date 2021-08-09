@@ -1,31 +1,59 @@
-#!/bin/sh
+#!/bin/bash
 
-setxkbmap de &
-nitrogen --restore &
-picom &
-~/.config/polybar/grayblocks/launch.sh &
+#
+# Spydr06's bspwm configuration
+# https://gihub.com/spydr06/dotfiles.git
+#
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+## autostart applications ##
+xrandr --dpi 96 & # set the dpi
+setxkbmap de & # set the keyboard layout to German
+nitrogen --restore & # apply the wallpaper
+picom --experimental-backends --vsync & # enable compositor
+~/.config/polybar/float/launch.sh & # start the bar
+# systray applications
+nm-applet & 
+volumeicon &
+# lxsession
+lxsession &
+lxpolkit &
+# start the sxhkd daemon
+sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+## monitor workspaces ##
+# 1: [main], 2: [dev], 3: [www], 4: [chat], 5: [media] , 6: [gfx]
+bspc monitor DP-4 -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor HDMI-0 -d 1 2 3 4 5 6 7 8 9 0
 
-bspc config border_width         3
-bspc config window_gap          10
-
+## window layout ##
+bspc config border_width         2
+bspc config window_gap          16
+bspc config top_padding			 0
 bspc config split_ratio          0.5
+
+## window behavior ##
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+## mouse behavior ##
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus true
 bspc config poiner_follows_monitor true
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
 
-# theme
-bspc config normal_border_color "#121215"
-bspc config active_border_color "#495A64"
+## theme ##
+bspc config normal_border_color \#11151a
+bspc config active_border_color \#11151a
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+## application rules ##
+bspc rule -a Gimp desktop='^6' state=floating follow=on
+bspc rule -a firefox desktop='^3' follow=on
+bspc rule -a Spotify desktop='^5' follow=on
+bspc rule -a discord desktop='^4' follow=on
+bspc rule -a codium desktop='^2' follow=on
+bspc rule -a Minecraft Launcher desktop='^1' follow=on
+bspc rule -a pavucontrol state=floating
 bspc rule -a nitrogen state=floating
