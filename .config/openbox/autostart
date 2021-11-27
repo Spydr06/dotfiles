@@ -1,8 +1,0 @@
-# required for xfce settings to work
-xfsettingsd &
-
-# start the panel
-~/.config/polybar/launch.sh --forest
-
-# load wallpaper
-nitrogen --restore &
