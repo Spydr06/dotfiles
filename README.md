@@ -14,6 +14,8 @@ This repository contains configurations for the following programs:
 * zsh (Shell)
 * fish (Shell)
 * EWW (Widgets)
+* dunst (Notification daemon)
+* conky (System information window)
 
 In addition, I've included the following things:
 * GTK 2/3/4 themes
@@ -38,14 +40,14 @@ Now you can copy all the configs you want to use in their corresponding director
 Although the installation does not differ from the default dwm installation process, you can follow the installation instructions on my [DWM repository](https://github.com/spydr06/dwm-spydr).
 
 ### Important:
-As this repository represents a copy of my $HOME folder, configurations will definately change in the future. To get all configs safely, I suggest you to download the exact version of my configurations you want over at the [releases tab](https://github.com/Spydr06/dotfiles/releases). 
+As this repository represents a copy of my $HOME folder, configurations will definitely change in the future. To get all configs safely, I suggest you to download the exact version of my configurations you want over at the [releases tab](https://github.com/Spydr06/dotfiles/releases). 
 
 ## Current Theme:
 
 ### BSPWM black
-img
+![img](https://raw.githubusercontent.com/Spydr06/dotfiles/main/Screenshots/bspwm-black.png)
 
-## Older Themes (available at the "releases" tab):
+## Older Themes (available at the [releases tab](https://github.com/Spydr06/dotfiles/releases)):
 
 ### DWM Ocean
 ![img](https://github.com/Spydr06/dotfiles/blob/main/Screenshots/dwm%20Rice.png)
