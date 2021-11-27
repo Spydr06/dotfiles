@@ -1,0 +1,113 @@
+#
+# Spydr06's configuration for Alacritty-ligatures, the GPU enhanced terminal emulator
+# https://gihub.com/spydr06/dotfiles.git
+#
+
+env:
+    TERM: xterm-256color
+    EDITOR: codium
+
+window:
+    padding:
+        x: 8
+        y: 8
+
+    title: alacritty
+
+    class:
+        instance: Alacritty
+        general: Alacritty
+
+    gtk_theme_variant: dark
+
+scrolling:
+    history: 10000
+
+font:
+    normal:
+        family: "FiraCode Nerd Font"
+        style: Retina
+
+    bold:
+        family: "FiraCode Nerd Font"
+        style: Bold
+
+    italic:
+        family: "FiraCode Nerd Font"
+        style: Italic
+
+    bold_italic:
+        family: "FiraCode Nerd Font"
+        style: Bold Italic
+
+    size: 10
+    offset:
+        x: 0
+        y: 0
+
+draw_bold_text_with_bright_colors: true
+
+colors:
+    primary:
+        background: '0x000000'
+        foreground: '0xd0dadf'
+
+    selection:
+        text: '0x252527'
+
+    normal:
+        black:   '0x252527'
+        red:     '0xbf616a'
+        green:   '0xa3be8c'
+        yellow:  '0xebcb8b'
+        blue:    '0x5e81ac'
+        magenta: '0xb48ead'
+        cyan:    '0x81a1c1'
+        white:   '0xd8dee9'
+
+    bright:
+        black:   '0x252527'
+        red:     '0xbf616a'
+        green:   '0xa3be8c'
+        yellow:  '0xebcb8b'
+        blue:    '0x5e81ac'
+        magenta: '0xb48ead'
+        cyan:    '0x81a1c1'
+        white:   '0xeceff4'
+
+background_opacity: 1.0
+
+dynamic_title: true
+
+cursor:
+    style:
+        shape: Underline
+        unfocused_hollow: false
+        blinking: Always
+
+    vi_mode_style: Underline
+
+    blink_interval: 500
+
+live_config_reload: true
+
+working_directory: None
+
+key_bindings:
+    - { key: V,          mods: Control|Shift, action: Paste            }
+    - { key: C,          mods: Control|Shift, action: Copy             }
+    - { key: Insert,     mods: Shift,         action: PasteSelection   }
+    - { key: Key0,       mods: Control,       action: ResetFontSize    }
+    - { key: Equals,     mods: Control,       action: IncreaseFontSize }
+    - { key: Plus,       mods: Control,       action: IncreaseFontSize }
+    - { key: Minus,      mods: Control,       action: DecreaseFontSize }
+    - { key: Minus,      mods: Control,       action: DecreaseFontSize }
+
+    - { key: Paste,      action: Paste }
+    - { key: Copy,       action: Copy  }
+    - { key: L,          mods: Control, action: ClearLogNotice                 }
+    - { key: L,          mods: Control, chars: "\x0c"                          }
+    - { key: PageUp,     mods: Shift,   action: ScrollPageUp,     mode: ~Alt   }
+    - { key: PageDown,   mods: Shift,   action: ScrollPageDown, mode: ~Alt     }
+    - { key: Home,       mods: Shift,   action: ScrollToTop,        mode: ~Alt }
+    - { key: End,        mods: Shift,   action: ScrollToBottom, mode: ~Alt     }
