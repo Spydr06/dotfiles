@@ -1,0 +1,69 @@
+#!/bin/bash
+
+#
+# Spydr06's bspwm configuration
+# https://gihub.com/spydr06/dotfiles.git
+#
+
+#
+# Autostart Applications
+#
+
+## x11 settings ##
+xrandr --dpi 96 & # set the dpi
+setxkbmap de &    # set the keyboard layout to default German
+sxhkd &           # start the hotkey daemon
+
+## start parts of the lxqt-desktop environment for convenience ##
+lxsession &
+lxpolkit &
+gnome-keyring-daemon &
+
+light-locker --lock-on-suspend & # return to lightdm when the computer gets suspended
+
+## look and feel ##
+nitrogen --restore &                      # apply the wallpaper
+picom --experimental-backends --vsync &   # enable compositor
+~/.config/polybar/launch.sh &             # start the bar
+conky --config=$HOME/.config/conky.conf & # start the conky panel
+eww daemon &				  # start the widget daemon
+
+#
+# BSPWM Settings
+#
+
+## monitor workspaces ##
+bspc monitor DP-4 -d 1 2 3 4 5 6 7 8 9 10
+
+## window layout ##
+bspc config border_width         2
+bspc config window_gap           10
+bspc config top_padding			 0
+bspc config split_ratio          0.5 # split windows at half of their size
+
+## window behavior ##
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+## mouse behavior ##
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
+bspc config poiner_follows_monitor true
+bspc config pointer_modifier mod4			# set the mouse pointer modifier to be the super key
+bspc config pointer_action1 move          	# move a window using super+left mouse button
+bspc config pointer_action3 resize_corner	# resize a window using super+right mouse button
+
+## border colors ##
+bspc config normal_border_color \#000000
+bspc config active_border_color \#000000
+
+## application rules ##
+bspc rule -a Gimp        desktop='^6' follow=on
+bspc rule -a firefox     desktop="^3" follow=on
+bspc rule -a brave       desktop='^3' follow=on
+bspc rule -a Spotify     desktop='^5' follow=on
+bspc rule -a discord     desktop='^4' follow=on
+bspc rule -a codium      desktop='^2' follow=on
+bspc rule -a nitrogen    state=floating
+bspc rule -a emacs       state=tiled
+bspc rule -a blueman state=floating

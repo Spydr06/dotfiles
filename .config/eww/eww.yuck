@@ -1,0 +1,220 @@
+;
+; Spydr06's eww configuration
+; https://github.com/spydr06/dotfiles.git
+;
+
+(defwidget outer-window-a [] 
+    (box :class "outer-window")
+)
+
+(defwidget outer-window-b [] 
+    (box :class "outer-window")
+)
+
+(defwidget outer-window-c []
+    (box :class "outer-window")
+)
+
+(defwidget date [] 
+    (box :orientation "v" :space-evenly "true"
+        (box :orientation "h"
+            :class "time"
+
+            (box :class "hour" hour)
+            (box :class "semicolon" "//")
+            (box :class "minute" minute)
+        )
+        (box :orientation "v" :class "day"
+            (box :class "weekday" weekday)
+        )
+    )
+)
+
+(defwidget cal []
+  (calendar :class "cal" :width "250"))
+
+(defwidget profile [] 
+    (box :orientation "h"
+         :space-evenly "true"
+
+        (box :class "pfp")
+        (box :class "text" :orientation "v"
+             :space-evenly "true"
+
+            (box :class "username" "Spydr")
+        )
+    )
+)
+
+(defwidget powermenu []
+    (box :class "powermenu" :orientation "h"
+        (button :class "poweroff-btn" :onclick "sudo systemctl poweroff" "")
+        (button :class "restart-btn" :onclick "sudo systemctl reboot" "")
+        (button :class "lock-btn" :onclick "$HOME/.config/eww/scripts/close.sh && light-locker-command -l" "")
+        (button :class "logout-btn" :onclick "sudo bspc quit" "")
+    )
+)
+
+(defwidget system []
+        (box    :orientation "v"
+                :class "system"
+                :space-evenly false
+                :spacing 10;
+                :valign "center"
+                :halign "center"
+                :width "250"
+
+                (box    :orientation "h"
+                        :class "metric-ram"
+                        :space-evenly false
+                        (label  :text "CPU"
+                                :class "metric-label")
+                        (scale  :min 0
+                                :max 101
+                                :active "false"
+                                :value "${cpu}")
+                )
+
+                (box    :orientation "h"
+                        :class "metric-ram"
+                        :space-evenly false
+                        (label  :text "RAM"
+                                :class "metric-label")
+                        (scale  :min 0
+                                :max 101
+                                :active "false"
+                                :value "${ram}")
+                )
+
+                (box    :orientation "h"
+                        :class "metric-vol"
+                        :space-evenly false
+                        (label  :text "VOL"
+                                :class "metric-label")
+                        (scale  :min 0
+                                :max 101
+                                :active "true"
+                                :value "${vol}"
+                                :onchange "amixer -D pulse sset Master {}%")
+                )
+        )
+)
+
+(defwidget disks []
+    (box :orientation "v"
+            :class "system"
+            :space-evenly false
+            :spacing 10;
+            :valign "center"
+            :halign "center"
+            :width "250"
+
+        (box :orientation "h"
+                :class "metric-root"
+                :space-evenly false
+                (label  :text "ROOT"
+                    :class "metric-label")
+                (scale  :min 0
+                    :max 101
+                    :active "false"
+                    :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}))
+
+        (box :orientation "h"
+                :class "metric-home"
+                :space-evenly false
+                (label  :text "HOME"
+                    :class "metric-label")
+                (scale  :min 0
+                    :max 101
+                    :active "false"
+                    :value {round((1 - (EWW_DISK["/home"].free / EWW_DISK["/home"].total)) * 100, 0)})
+            )
+    )
+)
+
+; Date Variables
+(defpoll minute :interval "10s"
+    "date '+%M'")
+(defpoll hour :interval "5m"
+    "date '+%H'")
+(defpoll weekday :interval "1h"
+    "date '+%A'")
+
+(defpoll ram :interval "1s" "echo $(printf %.$4f $(free -m | grep Mem | awk '{print ($3/$2)*100}'))")
+(defpoll vol :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll cpu :interval "1s" "echo `top -b -n1 | grep \"Cpu(s)\" | awk '{print $2 + $4}'`")
+
+(defwindow outer-window-a
+    :geometry (geometry :x "1640px" 
+                        :y "36px" 
+                        :width "270px" 
+                        :height "300px"
+    )
+    (outer-window-a)
+)
+
+(defwindow outer-window-b
+    :geometry (geometry :x "1640px"
+                        :y "346px"
+                        :width "270px"
+                        :height "184px"
+    )
+    (outer-window-b)
+)
+
+(defwindow outer-window-c
+    :geometry (geometry :x "1640px"
+                        :y "540px"
+                        :width "270px"
+                        :height "195px")
+    (outer-window-c)
+)
+
+(defwindow date 
+    :geometry (geometry :x "1650px"
+                        :y "46px"
+                        :width "250px" 
+                        :height "90px"
+    )
+    (date)
+)
+
+(defwindow profile
+    :geometry (geometry :x "1650px"
+                        :y "356px"
+                        :width "250px"
+                        :height "90px"
+    )
+    (profile)
+)
+
+(defwindow powermenu
+    :geometry (geometry :x "1650px"
+                        :y "456px" 
+                        :width "250px" 
+                        :height "40px"
+    )
+    (powermenu)
+)
+
+(defwindow calendar
+    :geometry (geometry :x "1650px"
+                        :y "146px"
+                        :width "250px"
+                        :height "40px")
+    (cal)
+)
+
+(defwindow system
+    :geometry (geometry :x "1650px"
+                        :y "526px"
+                        :width "250px"
+                        :height "145px")
+(system))
+
+(defwindow disks
+    :geometry (geometry :x "1650px"
+                        :y "618px"
+                        :width "250px"
+                        :height "145px")
+(disks))

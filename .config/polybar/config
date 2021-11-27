@@ -1,0 +1,147 @@
+;
+; Spydr06's polybar configuration
+; https://github.com/spydr06/dotfiles.git
+;
+
+[colors]
+	background = #000000
+	foreground = #d0dadf
+	accent = #526670
+	border = #68767D
+
+;
+; BARS
+;
+
+[bar/main]
+	enable-ipc=true
+	height = 26
+	width = 100%
+	offset-x = 0
+	offset-y = 0
+	radius = 0
+	border-size = 0
+	border-color = ${colors.border}
+
+
+	background = ${colors.background}
+	foreground = ${colors.foreground}
+
+	line-size = 2
+
+	padding=0
+	font-0=Fira Code Nerd Font:size=10;3
+	font-1=Font Awesome 5 Free Solid:size=10;2
+	font-2=Font Awesome 5 Free Regular:size=10;2
+	font-3=Font Awesome 5 Brands:size=10;2
+	font-4=font\-logos:size=10;2
+	font-5=IPAGothic:size=11;2
+
+	modules-left = bspwm 
+	modules-center = xwindow
+	modules-right = cpu memory pulseaudio time
+
+	scroll-up = bspwn-wsnext
+	scroll-down = bspwn-wsprev
+
+	wm-restack = bspwm
+	override-redirect = false
+
+	; tray settings
+	tray-position = right
+	tray-detached = false
+	tray-maxsize = 16
+
+	tray-background = ${colors.background}
+	tray-padding = 2
+	tray-scale = 1.0
+
+;
+; MODULES
+;
+
+[module/xwindow]
+	type = internal/xwindow
+	label = %title:0:40:...%
+	label-color1 = ${colors.foreground} 
+	label-background = ${colors.background} 
+	label-padding = 1
+
+[module/bspwm]
+	type = internal/bspwm
+	format = <label-state> <label-mode>
+	format-foreground = ${colors.foreground}
+	format-background = ${colors.background}
+	index-sort = true
+
+	enable-click = true
+	reverse-scroll = false
+
+	label-focused = ""
+	; label-focused-underline = ${colors.accent}
+	label-focused-padding = 1
+
+	label-occupied = ""
+	label-occupied-padding = 1
+
+	label-empty = ""
+	label-empty-padding = 1
+
+	label-urgent = 
+	label-urgent-padding = 2
+	label-urgent-foreground = ${colors.background}
+	label-urgent-background = ${colors.foreground}
+	label-urgent-overline = ${colors.background}
+	label-urgent-font = 2
+
+[module/cpu]
+	type = internal/cpu
+	interval = 2
+	format-prefix = "cpu: "
+	format-padding = 1
+	format-foreground = ${colors.foreground}
+	label = %percentage%%
+
+[module/memory]
+	type = internal/memory
+	interval = 2
+	format-padding = 1
+	format-prefix = "ram: "
+	format-foreground = ${colors.foreground}
+	label = %percentage_used%%
+
+
+[module/time]
+	type = custom/script
+	exec = date +%H:%M
+	label-padding = 1
+	click-left = /home/spydr/.config/eww/scripts/launch.sh &
+	click-right = /home/spydr/.config/eww/scripts/close.sh &
+
+[module/pulseaudio]
+	type = internal/pulseaudio
+
+	format-margin = 1
+	format-volume = <ramp-volume><label-volume>
+	label-volume = %percentage:3:3%%
+	format-volume-foreground = ${colors.foreground}
+	format-volume-background = ${colors.background}
+	format-volume-padding = 1
+	use-ui-max = false
+	interval = 5
+
+	ramp-volume-0 = ""
+	ramp-volume-1 = ""
+	ramp-volume-2 = ""
+
+	label-muted = "ﱝ"   
+	label-muted-background = ${colors.background}
+	label-muted-foreground = ${colors.foreground}
+	label-muted-padding = 1
+
+[settings]
+	screenchange-reload = true
+
+[global/wm]
+	margin-top = 0
+	margin-bottom = 0
