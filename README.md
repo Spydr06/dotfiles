@@ -1,31 +1,22 @@
 # dotfiles
 My dotfiles and configurations of my linux system.
-*Disclaimer:* This repository is very messy and definately needs some cleaning, which I will do as soon as possible.
 
 ## Contents
 This repository contains configurations for the following programs:
 * Alacritty (Terminal Emulator)
-* Termite (Terminal Emulator)
 * Polybar (Bar and System Tray)
-* Tint2 (Bar and System Tray)
-* Rofi (Application Launcher)
-* jgmenu (Application Launcher)
-* i3-gaps (Window Manager)
-* dwm (Window Manager, seperate repository)
+* dwm (Window Manager, separate repository)
 * bspwm (Window Manager)
-* herbstluftwm (Window Manager, almost exact copy of my i3 theme, not well done)
-* openbox (Floating Window Manager)
 * sxhkd (Hotkey Daemon)
-* nano (File Editor)
 * picom (X Compositor)
 * starship (Shell Prompt)
 * tabliss (New-tab-page for Firefox)
 * zsh (Shell)
+* fish (Shell)
+* EWW (Widgets)
 
 In addition, I've included the following things:
-* GKT2/3 themes
-* Firefox Userchrome (not mine)
-* Openbox themes
+* GTK 2/3/4 themes
 * Some Screenshots
 * My Wallpapers
 
@@ -49,8 +40,15 @@ Although the installation does not differ from the default dwm installation proc
 ### Important:
 As this repository represents a copy of my $HOME folder, configurations will definately change in the future. To get all configs safely, I suggest you to download the exact version of my configurations you want over at the [releases tab](https://github.com/Spydr06/dotfiles/releases). 
 
-## newest theme (dwm):
+## Current Theme:
+
+### BSPWM black
+img
+
+## Older Themes (available at the "releases" tab):
+
+### DWM Ocean
 ![img](https://github.com/Spydr06/dotfiles/blob/main/Screenshots/dwm%20Rice.png)
 
-## older theme: (i3-gaps):
+### i3-gaps
 ![img](https://github.com/Spydr06/dotfiles/blob/main/Screenshots/Rice%2003%20v2%20i3-gaps.png)
