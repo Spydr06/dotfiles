@@ -115,8 +115,8 @@
 	type = custom/script
 	exec = date +%H:%M
 	label-padding = 1
-	click-left = /home/spydr/.config/eww/scripts/launch.sh &
-	click-right = /home/spydr/.config/eww/scripts/close.sh &
+	click-left = /home/spydr/.config/eww/scripts/sidebar.sh open &
+	click-right = /home/spydr/.config/eww/scripts/sidebar.sh close &
 
 [module/pulseaudio]
 	type = internal/pulseaudio

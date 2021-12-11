@@ -7,12 +7,14 @@
 $accent: #516C76;
 $bg: #000000;
 $bg_alt: #0f0f0f;
+$bg_hover: #171717;
 $fg: #d0dadf;
 
 $red: #bf616a;
 $blue: #81a1c1;
 $magenta: #b48ead;
 $green: #a3be8c;
+$yellow: #ebcb8b;
 
 * {
     all: unset;
@@ -99,8 +101,8 @@ button:hover {
     }
 }
 
-// Powermenu
-.powermenu {
+// quicksettings
+.quicksettings {
     background-color: $bg_alt;
     border-radius: 10px;
 
@@ -108,7 +110,7 @@ button:hover {
         background-color: $bg;
         border-radius: 12px;
     
-        font-family: "Material Icons";
+        font-family: "FontAwesome";
         font-size: 20px;
 
         margin: 8px 8px 8px 8px;
@@ -117,6 +119,43 @@ button:hover {
 
         &:hover {
             color: $accent;
+        }
+    }
+
+    .powermenu-btn {
+        color: $red;
+    }
+
+    .settings-btn {
+        color: $blue;
+    }
+
+    .terminal-btn {
+        color: $magenta;
+
+        padding-right: 9px;
+        padding-top: 12px;
+    }
+
+    .play-btn {
+        color: $green;
+    }
+}
+
+// Powermenu
+.powermenu {
+    button {
+        background-color: $bg_alt;
+        border-radius: 8px;
+    
+        font-family: "FontAwesome";
+        font-size: 16px;
+
+        margin: 0px 0px 10px 0px;
+
+        &:hover {
+            color: $accent;
+            background-color: $bg_hover;
         }
     }
 
@@ -130,13 +169,14 @@ button:hover {
 
     .lock-btn {
         color: $magenta;
-
-        padding-right: 9px;
-        padding-top: 12px;
     }
 
     .logout-btn {
         color: $green;
+    }
+
+    .suspend-btn {
+        color: $yellow;
     }
 }
 
@@ -147,8 +187,13 @@ button:hover {
     padding: 12px;
 }
 
-.metric-ram scale trough highlight, .metric-vol scale trough highlight {
+.metric-ram scale trough highlight {
     background-color: $accent;
+    border-radius: 8px;
+}
+
+.metric-vol scale trough highlight {
+    background-color: $magenta;
     border-radius: 8px;
 }
 

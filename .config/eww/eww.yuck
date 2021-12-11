@@ -15,6 +15,10 @@
     (box :class "outer-window")
 )
 
+(defwidget outer-window-d []
+    (box :class "outer-window")    
+)
+
 (defwidget date [] 
     (box :orientation "v" :space-evenly "true"
         (box :orientation "h"
@@ -46,12 +50,49 @@
     )
 )
 
+(defwidget quicksettings []
+    (box :class "quicksettings" :orientation "h"
+        (button :class "powermenu-btn" 
+            :onclick "./scripts/powermenu.sh" 
+            :tooltip "Power Menu"
+            "")
+        (button :class "settings-btn" 
+            :onclick "lxappearance &" 
+            :tooltip: "Settings"
+            "")
+        (button :class "terminal-btn" 
+            :onclick "alacritty -e zsh &" 
+            :tooltip: "Terminal"
+            "")
+        (button :class "play-btn" 
+            :onclick "playerctl play-pause" 
+            :tooltip: "${play_tooltip}"
+            "${play_icon}")
+    )
+)
+
 (defwidget powermenu []
-    (box :class "powermenu" :orientation "h"
-        (button :class "poweroff-btn" :onclick "sudo systemctl poweroff" "")
-        (button :class "restart-btn" :onclick "sudo systemctl reboot" "")
-        (button :class "lock-btn" :onclick "$HOME/.config/eww/scripts/close.sh && light-locker-command -l" "")
-        (button :class "logout-btn" :onclick "sudo bspc quit" "")
+    (box :class "powermenu" :orientation "v"
+        (button :class "poweroff-btn" 
+            :tooltip "Shutdown"
+            :onclick "sudo systemctl poweroff" 
+        "")
+        (button :class "restart-btn" 
+            :tooltip: "Reboot"
+            :onclick "sudo systemctl reboot" 
+        "")
+        (button :class "lock-btn" 
+            :tooltip "Lock"
+            :onclick "./scripts/powermenu.sh close && light-locker-command -l" 
+        "")
+        (button :class "logout-btn" 
+            :tooltip "Logout"
+            :onclick "sudo bspc quit" 
+        "")
+        (button :class "suspend-btn" 
+            :tooltop: "Suspend"
+            :onclick "./scripts/powermenu.sh close && sudo systemctl suspend" 
+        "")
     )
 )
 
@@ -132,17 +173,19 @@
     )
 )
 
-; Date Variables
-(defpoll minute :interval "10s"
-    "date '+%M'")
-(defpoll hour :interval "5m"
-    "date '+%H'")
-(defpoll weekday :interval "1h"
-    "date '+%A'")
+; date variables
+(defpoll minute :interval "10s" "date '+%M'")
+(defpoll hour :interval "1m" "date '+%H'")
+(defpoll weekday :interval "1h" "date '+%A'")
 
+; system information variables
 (defpoll ram :interval "1s" "echo $(printf %.$4f $(free -m | grep Mem | awk '{print ($3/$2)*100}'))")
 (defpoll vol :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
 (defpoll cpu :interval "1s" "echo `top -b -n1 | grep \"Cpu(s)\" | awk '{print $2 + $4}'`")
+
+; play-pause
+(defpoll play_icon :interval "1s" "./scripts/musicplayer.sh glyph")
+(defpoll play_tooltip :interval "5s" "./scripts/musicplayer.sh tooltip")
 
 (defwindow outer-window-a
     :geometry (geometry :x "1640px" 
@@ -157,16 +200,24 @@
     :geometry (geometry :x "1640px"
                         :y "346px"
                         :width "270px"
-                        :height "184px"
+                        :height "180px"
     )
     (outer-window-b)
 )
 
 (defwindow outer-window-c
     :geometry (geometry :x "1640px"
-                        :y "540px"
+                        :y "536px"
                         :width "270px"
                         :height "195px")
+    (outer-window-c)
+)
+
+(defwindow outer-window-d
+    :geometry (geometry :x "1570px"
+                        :y "312px"
+                        :width "60px"
+                        :height "250px")
     (outer-window-c)
 )
 
@@ -188,13 +239,13 @@
     (profile)
 )
 
-(defwindow powermenu
+(defwindow quicksettings
     :geometry (geometry :x "1650px"
                         :y "456px" 
                         :width "250px" 
-                        :height "40px"
+                        :height "60px"
     )
-    (powermenu)
+    (quicksettings)
 )
 
 (defwindow calendar
@@ -207,14 +258,21 @@
 
 (defwindow system
     :geometry (geometry :x "1650px"
-                        :y "526px"
+                        :y "522px"
                         :width "250px"
                         :height "145px")
 (system))
 
 (defwindow disks
     :geometry (geometry :x "1650px"
-                        :y "618px"
+                        :y "614px"
                         :width "250px"
                         :height "145px")
 (disks))
+
+(defwindow powermenu
+    :geometry (geometry :x "1580"
+                        :y "322"
+                        :width "40"
+                        :height "240")
+(powermenu))
