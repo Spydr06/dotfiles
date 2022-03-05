@@ -7,3 +7,6 @@
 [submodule "dwm-spydr"]
 	path = dwm-spydr
 	url = https://github.com/Spydr06/dwm-spydr.git
+[submodule "wallpapers"]
+	path = wallpapers
+	url = https://github.com/spydr06/wallpapers.git
