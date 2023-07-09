@@ -7,10 +7,6 @@
 
 ![rice](./img/rice.png)
 
-## Current Setup
-
-![neofetch](./img/neofetch.png)
-
 > **Note**
 > For older setups, please visit the [release tab](https://github.com/spydr06/dotfiles/releases)
 
