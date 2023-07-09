@@ -1,0 +1,38 @@
+.monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab {
+    --tab-border-bottom-color: transparent !important;
+    border-radius: 7px;
+    margin: 3px !important;
+    height: calc(100% - 6px) !important;
+}
+
+.tab-label {
+    margin-top: -3px !important;
+}
+
+.quick-input-widget {
+    background-color: rgba(0, 0, 0, 30%) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid #404040;
+    border-radius: 10px;
+    margin: 100px auto;
+}
+
+.quick-input-list {
+    background: transparent !important;
+}
+
+.monaco-list-rows {
+    background: transparent !important;
+}
+
+/*.tabs-container {
+
+}*/
+
+.editor-actions {
+    background-color: #090b10 !important;
+}
+
+.tabs-container[role=tablist] {
+    background-color: #090b10 !important;
+}

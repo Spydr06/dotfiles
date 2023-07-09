@@ -1,0 +1,41 @@
+#
+# Spydr06's starship configuration
+# https://github.com/spydr06/dotfiles.git
+#
+
+format = '''
+[╭─](white)[\[](bold white)$directory$git_branch$git_commit$git_state$git_metrics[\]](bold white)
+[╰──>](white) $status$username $character
+'''
+
+[character]
+success_symbol = "[>](green)[>](bold blue)[>](green)"
+error_symbol = "[>](red)[>](bold yellow)[>](red)"
+
+[directory]
+truncation_length = 32
+truncation_symbol = ""
+truncate_to_repo = false 
+format = '[$path](bold blue)[$read_only](bold red)'
+
+[username]
+disabled = false
+show_always = true
+style_user = "white bold"
+style_root = "red bold"
+format = "[λ]($style) [/](bold blue)"
+
+[java]
+symbol = "Java "
+
+[git_branch]
+symbol = " "
+format = ' [$symbol$branch]($style)'
+
+[git_metrics]
+disabled = false
+format = ' [+$added]($added_style)/[-$deleted]($deleted_style)'
+
+[status]
+disabled = false
+format = '[\($status\)]($style) '

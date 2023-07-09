@@ -1,0 +1,230 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "editor.fontFamily": "'CartographCF Nerd Font'",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "normal",
+    "editor.cursorStyle": "underline",
+    "c-cpp-flylint.clang.includePaths": [
+        "/home/spydr/Coding/C/CSpydr/lib"
+    ],
+    "c-cpp-flylint.cppcheck.platform": "unix64",
+    "files.associations": {
+        "*.tt": "c",
+        "*.pde": "pde",
+        "*.h": "c",
+        "*.ll": "llvm",
+        "*.rasi": "rasi",
+        "*.yuck": "yuck",
+        "*.a": "gas",
+        "*.s": "gas",
+        "*.xpm": "plaintext",
+        "*.b": ".b",
+        "*.ui": "xml",
+        "*.y": "yacc",
+        "*.lrsproj": "json",
+        "*.lisp": "lisp",
+        "*.lrsmod": "json",
+        "*.bmf": "ron",
+        "*.c": "c"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "editor.smoothScrolling": true,
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.default.includePath": [
+        "/home/spydr/Coding/C++/SpydrEngine/Spydr/src"
+    ],
+    "editor.minimap.size": "fit",
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.maxColumn": 80,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
+    "workbench.hover.delay": 200,
+    "workbench.preferredDarkColorTheme": "Ayu Dark Bordered",
+    "workbench.preferredLightColorTheme": "Ayu Light Bordered",
+    "workbench.tips.enabled": false,
+    "workbench.tree.indent": 10,
+    "cSpell.enabled": true,
+    "terminal.integrated.confirmOnKill": "never",
+    "terminal.integrated.fontSize": 13,
+    "explorer.confirmDelete": false,
+    "clangd.path": "/home/spydr/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/12.0.1/clangd_12.0.1/bin/clangd",
+    "editor.scrollbar.horizontal": "hidden",
+    "terminal.external.linuxExec": "alacritty -e zsh",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.fontFamily": "CartographCF Nerd Font",
+    "files.autoSave": "onWindowChange",
+    "editor.cursorSmoothCaretAnimation": true,
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "//",
+            "color": "#474747",
+            "strikethrough": true,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "fixme",
+            "color": "#FF5900",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        }
+    ],
+    "breadcrumbs.enabled": true,
+    "editor.minimap.showSlider": "always",
+    "cSpell.allowCompoundWords": true,
+    "FSharp.suggestGitignore": false,
+    "diffEditor.maxFileSize": 0,
+     "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#ff004c",
+        //"editor.lineHighlightBorder": "#16161E",
+        "editor.lineHighlightBorder": "#1F2233",
+        //"editor.lineHighlightBackground": "#0F111A",
+        "tab.inactiveBackground": "#090B10",
+        "tab.border": "#090B10",
+        "titleBar.activeBackground": "#090B10",
+        "tab.unfocusedActiveBackground": "#090B10",
+        "activityBarBadge.background": "#717CB4",
+        "breadcrumb.background": "#090B10",
+        "notifications.background": "#090B10"
+    },
+    "window.title": "${activeEditorShort} :: ${folderPath} :: ${appName}",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "markdown-pdf.highlightStyle": "github.css",
+    "markdown-pdf.styles": [
+        "~/dev/md/github.css",
+        "github.css"
+    ],
+    "markdown-pdf.includeDefaultStyles": false,
+    "markdown-pdf.margin.top": "1cm",
+    "markdown-pdf.scale": 0.8,
+    "cmake.configureOnOpen": false,
+    "markdown-preview-github-styles.colorTheme": "light",
+    "window.dialogStyle": "custom",
+    "terminal.integrated.gpuAcceleration": "on",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "mesonbuild.configureOnOpen": true,
+    "npm.exclude": [
+        "**/xpacks/**"
+    ],
+    "editor.largeFileOptimizations": false,
+    "RainbowBrackets.depreciation-notice": false,
+    "customizeUI.activityBar": "regular",
+    "customizeUI.activityBarHideSettings": true,
+    // Disable bracket colorization
+    "editor.bracketPairColorization.enabled": false,
+    "editor.guides.bracketPairsHorizontal": false,
+    "editor.guides.highlightActiveBracketPair": true,
+    "cSpell.language": "en,de-DE",
+    "errorLens.fontSize": "11",
+    "errorLens.fontStyleItalic": true,
+    "errorLens.gutterIconsEnabled": true,
+    "errorLens.gutterIconSet": "borderless",
+    "clangd.arguments": [
+        "--enable-config"
+    ],
+    "v.vls.customVrootPath": "/home/spydr/dev/vlang",
+    "cSpell.userWords": [
+        "Adwaita",
+        "aeonetica",
+        "constrainf",
+        "Glfw",
+        "glsl",
+        "Idents",
+        "impls",
+        "linux",
+        "logicpp",
+        "LOGICPP",
+        "pushd",
+        "sheesh"
+    ],
+    "NyanCat.name": "nyan",
+    "haskell.manageHLS": "GHCup",
+    "svg.preview.mode": "svg",
+    "python.defaultInterpreterPath": "/usr/bin/python3.10",
+    "hexeditor.columnWidth": 16,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "[c]": {
+
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "workbench.editorAssociations": {
+        "*.png": "imagePreview.previewEditor",
+        "*.gif": "imagePreview.previewEditor",
+        "*.uml": "hexEditor.hexedit"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "arduino.useArduinoCli": true,
+    "arduino.logLevel": "verbose",
+    "vscode_custom_css.imports": [
+        "file:///home/spydr/.vscode-oss/custom.css"
+    ],
+    "warmUp.changeCount": "15",
+    "hediet.vscode-drawio.resizeImages": null,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "editor.lineHeight": 1.5,
+    "workbench.colorTheme": "Community Material Theme Ocean High Contrast",
+    "clangd.detectExtensionConflicts": false,
+    "editor.fontSize": 13,
+    "v-analyzer.serverPath": "~/.config/v-analyzer/bin/v-analyzer",
+}

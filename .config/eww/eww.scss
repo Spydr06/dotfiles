@@ -1,0 +1,253 @@
+/*
+ * Spydr06's eww configuration
+ * https://github.com/spydr06/dotfiles.git
+ */
+
+// Variables
+$accent: #516C76;
+$bg: #000000;
+$bg_alt: #0f0f0f;
+$bg_hover: #171717;
+$fg: #d0dadf;
+$border: #446382;
+
+$red: #ff3334;
+$blue: #7aa6da;
+$magenta: #c397d8;
+$green: #b9ca4a;
+$yellow: #e7c547;
+
+* {
+    all: unset;
+}
+
+window {
+    color: $fg;
+    font-family: "CascadiaCode", monospace;
+}
+
+button:hover {
+    color: $accent;
+}
+
+// Custom classes
+.outer-window {
+    background-color: $bg;
+    border-radius: 10px;
+}
+
+// Date
+.date {
+    background-color: $bg_alt;
+    border-radius: 10px;
+
+    .time {
+        font-size: 30px;
+        font-family: "CascadiaCode Light";
+        color: $fg;
+    
+        margin: 10px 60px 0px 60px;
+
+        .semicolon {
+            padding: 0px;
+            margin-top: -3px;
+
+            color: $accent;
+        }
+    
+    }
+    
+    .day {
+        margin: 0px 60px 10px 60px;
+    
+        font-size: 20px;
+        color: $accent;
+    }
+}
+
+// Calendar
+.cal {
+    background-color: $bg_alt;
+    border-radius: 10px;
+
+    padding: 3px;
+    padding-bottom: 0px;
+
+    .button:hover {
+        color: #fff;
+    }
+
+    .highlight {
+        color: $accent;
+    }
+
+    :selected {
+        color: $green;
+        font-weight: bold;
+    }
+}
+
+// Profile
+.profile {
+    background-color: $bg_alt;
+    border-radius: 10px;
+
+    .pfp {
+        background-image: url("./assets/pfp.png");
+        background-size: 70px;
+    
+        margin: 10px 25px 10px 30px;
+        border-radius: 40px;
+    }
+
+    .text {
+        margin: 20px -20px 20px -60px;
+
+        .welcome, .username {
+            font-size: 20px;
+        }
+        
+        .username {
+            font-size: 24px;
+            color: $accent;
+        }    
+    }
+}
+
+// quicksettings
+.quicksettings {
+    background-color: $bg_alt;
+    border-radius: 10px;
+
+    button {
+        background-color: $bg;
+        border-radius: 12px;
+    
+        font-family: "Font Awesome 6 Free";
+        font-size: 18px;
+
+        margin: 8px 8px 8px 8px;
+        padding: 10px;
+        padding-top: 10px;
+
+        &:hover {
+            color: $accent;
+        }
+    }
+
+    .powermenu-btn {
+        color: $red;
+        padding-left: 12px;
+        padding-top: 12px;
+    }
+
+    .settings-btn {
+        color: $blue;
+        padding-left: 12px;
+        padding-top: 12px;
+    }
+
+    .terminal-btn {
+        color: $magenta;
+
+        padding-right: 9px;
+        padding-top: 12px;
+    }
+
+    .play-btn {
+        color: $green;
+    }
+}
+
+// Powermenu
+.powermenu {
+    button {
+        background-color: $bg_alt;
+        border-radius: 8px;
+    
+        font-family: "Font Awesome 6 Free";
+        font-size: 16px;
+
+        margin: 0px 0px 10px 0px;
+
+        &:hover {
+            color: $accent;
+            background-color: $bg_hover;
+        }
+    }
+
+    .poweroff-btn {
+        color: $red;
+    }
+
+    .restart-btn {
+        color: $blue;
+    }
+
+    .lock-btn {
+        color: $magenta;
+    }
+
+    .logout-btn {
+        color: $green;
+    }
+
+    .suspend-btn {
+        color: $yellow;
+    }
+}
+
+// System information
+.system {
+    border-radius: 10px;
+    background-color: $bg_alt;
+    padding: 12px;
+}
+
+.metric-ram scale trough highlight {
+    background-color: $accent;
+    border-radius: 8px;
+}
+
+.metric-vol scale trough highlight {
+    background-color: $magenta;
+    border-radius: 8px;
+}
+
+.metric-ram scale trough, .metric-vol scale trough {
+    background-color: $bg;
+    border-radius: 8px;
+    min-height: 16px;
+    min-width: 180px;
+    margin-left: 20px;
+}
+
+// Disk information
+.disks {
+    border-radius: 10px;
+    background-color: $bg_alt;
+    padding: 12px;
+}
+
+.metric-root scale trough, .metric-home scale trough {
+    background-color: $bg;
+    border-radius: 8px;
+    min-height: 16px;
+    min-width: 180px;
+    margin-left: 12px;
+}
+
+.metric-root scale trough highlight {
+    background-color: $green;
+    border-radius: 8px;
+}
+  
+.metric-home scale trough highlight {
+    background-color: $blue;
+    border-radius: 8px;
+}
+
+// Bar labels
+.metric-label {
+    color: $fg;
+}
