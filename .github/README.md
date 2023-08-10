@@ -1,11 +1,11 @@
 <div align="center">
     <p>
-        <img width="400" src="./img/title.png"></img>
+        <img width="400" src="/.github/img/title.png"></img>
     </p>
     <h2>Configuration files of my linux system.</h2>
 </div>
 
-![rice](./img/rice.png)
+![rice](/.github/img/rice.png)
 
 > **Note**
 > For older setups, please visit the [release tab](https://github.com/spydr06/dotfiles/releases)
