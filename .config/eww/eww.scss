@@ -43,12 +43,13 @@ button:hover {
 
     .time {
         font-size: 30px;
-        font-family: "CascadiaCode Light";
+        font-weight: 700;
         color: $fg;
     
         margin: 10px 60px 0px 60px;
 
         .semicolon {
+            font-weight: 400;
             padding: 0px;
             margin-top: -3px;
 
