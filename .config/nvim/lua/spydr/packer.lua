@@ -6,7 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-	
+
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		--or				, branch = '0.1.x',
@@ -54,21 +54,13 @@ return require('packer').startup(function(use)
     -- close parens
     use('m4xshen/autoclose.nvim')
 
+    -- icon support
+    use('nvim-tree/nvim-web-devicons')
+
     -- dashboard
-    use {
-        'glepnir/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup {
-                -- config here
-            --    theme = 'doom'
-            }
-        end,
-        requires = {'nvim-tree/nvim-web-devicons'}
-    }
+    use('glepnir/dashboard-nvim')
 
     -- tabs
-    use('nvim-tree/nvim-web-devicons')
     use {
         'romgrk/barbar.nvim',
         requires = 'nvim-web-devicons'
@@ -82,5 +74,8 @@ return require('packer').startup(function(use)
 
     -- discord presence
     use 'andweeb/presence.nvim'
+
+    -- git integration
+    use 'lewis6991/gitsigns.nvim'
 end)
 

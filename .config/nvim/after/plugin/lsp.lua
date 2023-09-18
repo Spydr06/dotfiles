@@ -26,9 +26,11 @@ cmp.setup({
     },
     mapping = cmp_mappings,
     window = {
-    --    completion = cmp.config.window.bordered()
+        -- completion = cmp.config.window.bordered()
+        documentation = cmp.config.window.bordered()
     }
 })
+
 -- lsp.set_preferences({
 -- sign_icons = { }
 -- })
