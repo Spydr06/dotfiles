@@ -77,5 +77,8 @@ return require('packer').startup(function(use)
 
     -- git integration
     use 'lewis6991/gitsigns.nvim'
+
+    -- indentation lines
+    use 'lukas-reineke/indent-blankline.nvim'
 end)
 
