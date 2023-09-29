@@ -12,6 +12,13 @@ lualine.setup({
         section_separators = { left = '', right = '' },
         refresh = {
 
+        },
+    },
+    sections = {
+        lualine_x = {
+            {'o:encoding', fmt = string.lower},
+            {'o:fileformat'},
+            'filetype'
         }
     }
 })
