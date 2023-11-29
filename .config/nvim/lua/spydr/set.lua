@@ -24,7 +24,10 @@ vim.opt.termguicolors = true
 vim.opt.guicursor = "i-r-c:hor90,n-v:block"
 
 -- line numbers
+vim.opt.relativenumber = true
 vim.opt.nu = true
+
+vim.opt.cursorline = true
 
 -- scrolling
 vim.opt.scrolloff = 8

@@ -1,5 +1,26 @@
-require("indent_blankline").setup {
-    buftype_exclude = { "terminal", "nofile", "help", "prompt" },
-    filetype_exclude = { "dashboard" }
+require("ibl").setup {
+    indent = {
+        char = "▏",
+    },
+    exclude = {
+        buftypes = {
+            "terminal",
+            "nofile",
+            "help",
+            "quickfix",
+            "prompt"
+        },
+        filetypes = {
+            "lspinfo",
+            "packer",
+            "dashboard",
+            "help",
+            "man",
+            "gitcommit",
+            "TelescopePrompt",
+            "TelescopeResults",
+            ""
+        }
+    },
 }
 
