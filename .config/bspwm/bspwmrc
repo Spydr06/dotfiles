@@ -26,7 +26,9 @@ xset s 0 0 # disable burn-in prevention
 nitrogen --restore &                      # apply the wallpaper
 picom --vsync &   # enable compositor
 ~/.config/polybar/launch.sh &             # start the bar
-eww daemon
+eww daemon &
+
+xcorners -W 1920 -H 14 -y 446 -r 14 -1 &
 
 # conky --config=$HOME/.config/conky.conf & # start the conky panel
 
@@ -59,9 +61,9 @@ bspc config pointer_action3 resize_corner	# resize a window using super+right mo
 bspc config pointer_motion_interval 1
 
 ## border colors ##
-bspc config normal_border_color \#000000
-bspc config active_border_color \#000000
-bspc config focused_border_color \#446382 #\#446dba #\#516C76
+bspc config normal_border_color \#101017
+bspc config active_border_color \#101017
+bspc config focused_border_color \#446382 #\#232333 #\#446382 #\#446dba #\#516C76
 
 ## application rules ##
 bspc rule -a Gimp                desktop='^6' follow=on
