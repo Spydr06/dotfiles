@@ -1,11 +1,9 @@
 syn match cspydrComment "#.*$"
+syntax region cspydrComment start="#\[" end="]#"
 hi def link cspydrComment Comment
 
-syn region cspydrMultilineComment start="#\[" end="#\]"
-hi def link cspydrMultilineComment Comment
-
 syn match cspydrCArrayModifier "'[cC]"
-hi def link cspydrTypeModifier StorageClass
+hi def link cspydrCArrayModifier StorageClass
 
 " true, false, nil
 syn keyword cspydrLiteralKeyword true false nil
@@ -24,7 +22,7 @@ hi def link cspydrLoopKeyword Repeat
 syn keyword cspydrLabelKeyword break continue
 hi def link cspydrLabelKeyword Label
 
-syn match cspydrEmptyOption "_[^a-zA-Z0-9_]"
+syn match cspydrEmptyOption "_\ze[^a-zA-Z0-9?'_]"
 hi def link cspydrEmptyOption Label
 
 syn keyword cspydrOperatorKeyword alignof sizeof typeof len
@@ -39,20 +37,16 @@ hi def link cspydrParens Ignore
 syn keyword cspydrOtherKeyword asm using noop
 hi def link cspydrOtherKeyword Keyword
 
-"top-level keywords
-syn keyword cspydrTopLevelKeyword fn interface namespace type
+" top-level keywords
+syn keyword cspydrTopLevelKeyword fn interface namespace type operator
 hi def link cspydrTopLevelKeyword Keyword
 
 " macros
-syn match cspydrMacroIdent "[a-zA-Z_][a-zA-Z0-9_]*!"
+syn match cspydrMacroIdent "[a-zA-Z_][a-zA-Z0-9?'_]*!"
 hi def link cspydrMacroIdent Macro
 
 syn keyword cspydrPreprocessorKeyword macro import
 hi def link cspydrPreprocessorKeyword PreProc
-
-" constants
-syn match cspydrConstIdent "[A-Z_][A-Z0-9_]*"
-hi def link cspydrConstIdent Constant
 
 " default types
 syn keyword cspydrPrimitiveType void bool char i8 u8 i16 u16 i32 u32 i64 u64 f32 f64 f80
@@ -61,11 +55,15 @@ hi def link cspydrPrimitiveType Type
 syn keyword cspydrStructure enum interface struct union
 hi def link cspydrStructure Structure
 
-syn keyword cspydrTypeModifier const embed extern let
-hi def link cspydrTypeModifier StorageClass
+syn keyword cspydrTypeModifier dyn const embed extern let
+hi def link cspydrTypeModifier Statement
 
-syn match cspydrTypedef "[A-Z][a-zA-Z0-9_]*"
+syn match cspydrTypedef "[A-Z][a-zA-Z0-9?'_]*"
 hi def link cspydrTypedef Typedef
+
+" function calls
+syn match cspydrFnIdent "[a-zA-Z_][a-zA-Z0-9_]*\s*\ze("
+hi def link cspydrFnIdent Function
 
 " number literals:
 syn match cspydrNumber "[0-9][0-9_]*"
@@ -84,14 +82,13 @@ syn match cspydrFltNumber "[0-9][0-9_]*\.[0-9_][0-9_]*"
 hi def link cspydrFltNumber Float
 
 " strings
-syn region cspydrString start=+"+ end=+"+ skip=+\\"+
+syn match cspydrEscapedChar "'\\.'" contained
+hi def link cspydrEscapedChar SpecialChar
+
+syn region cspydrString start=+"+ end=+"+ skip=+\\"+ contains=cspydrEscapedChar
 hi def link cspydrString String
 
 syn match cspydrChar "'.'"
+syn match cspydrChar "'\\.'"
 hi def link cspydrChar Character
 
-syn match cspydrEscapedCHar "'\\.'"
-hi def link cspydrEscapedCHar Character
-
-syn match cspydrFnIdent "[a-zA-Z_][a-zA-Z0-9_]*("
-hi def link cspudrFnIdent Function

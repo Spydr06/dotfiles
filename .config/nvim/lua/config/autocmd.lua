@@ -12,9 +12,6 @@ local function create_augroups(definitions)
 end
 
 local autocmds = {
-    packer = {
-        {"BufWritePost", "packer.lua", "PackerCompile"};
-    };
     terminal_job = {
         {"TermOpen", "*", [[tnoremap <buffer> <Esc> <c-\><c-n>]]};
         {"TermOpen", "*", "startinsert"};

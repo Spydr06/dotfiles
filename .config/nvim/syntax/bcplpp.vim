@@ -1,1 +1,0 @@
-/home/spydr/dev/c/bcpl++/editors/bcplpp.vim
