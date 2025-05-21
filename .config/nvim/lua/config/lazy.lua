@@ -35,6 +35,6 @@ require("lazy").setup({
 	install = { colorscheme = { "tokyonight" } },
 
 	-- automatically check for updates
-	checker = { enabled = true },
+	checker = { enabled = true, notify = false },
 })
 

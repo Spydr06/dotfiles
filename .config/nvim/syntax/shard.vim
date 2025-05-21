@@ -1,0 +1,1 @@
+/home/felix/dev/c/amethyst/shard/shard.vim

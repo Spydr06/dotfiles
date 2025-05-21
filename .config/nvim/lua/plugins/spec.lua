@@ -113,6 +113,12 @@ return {
                 desc = 'LSP actions',
                 callback = function(event)
                     local opts = { buffer = event.buf, remap = false }
+                    --[[
+                    local client = vim.lsp.get_client_by_id(event.data.client_id)
+                    if client.server_capabilities.inlayHintProvider then
+                        vim.lsp.inlay_hint.enable(true)
+                    end
+                    ]]
 
                     vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
                     vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -163,8 +169,9 @@ return {
     },
     {
         "williamboman/mason.nvim",
+        version = "^1.0.0",
         dependencies = {
-            "williamboman/mason-lspconfig.nvim",
+            { "williamboman/mason-lspconfig.nvim", version = "^1.0.0" },
             "neovim/nvim-lspconfig",
         },
         config = function()
@@ -184,6 +191,17 @@ return {
         end
     },
     {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy", -- Or `LspAttach`
+        priority = 1000, -- needs to be loaded in first
+        config = function()
+            require('tiny-inline-diagnostic').setup {
+                preset = "classic",
+            }
+            vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
+        end
+    },
+    --[[{
         "simrat39/rust-tools.nvim",
         dependencies = { "neovim/nvim-lspconfig" },
         config = function()
@@ -200,7 +218,7 @@ return {
             rt.inlay_hints.set()
             rt.inlay_hints.enable()
         end,
-    },
+    },]]
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
