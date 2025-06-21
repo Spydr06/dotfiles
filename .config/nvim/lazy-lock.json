@@ -19,5 +19,6 @@
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "65e52a32fc069a73055d4e78a3cf7a634ab625ea" },
   "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
   "undotree": { "branch": "master", "commit": "b951b87b46c34356d44aa71886aecf9dd7f5788a" },
+  "vimtex": { "branch": "master", "commit": "e10525a5aa65e2544f11e680dd81c77fba800248" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }
